@@ -27,8 +27,8 @@ except ImportError:
 # Configuration — override via environment variables or edit directly
 # ---------------------------------------------------------------------------
 
-PROXY_URL = os.getenv("PROXY_URL", "http://localhost:3000/v1")
-TEAM_API_KEY = os.getenv("TEAM_API_KEY", "hack-team_alpha-5ea98fb989180728bf0e0bd3fb34665a")
+PROXY_URL = os.getenv("PROXY_URL", "http://hackathon-proxy.westeurope.azurecontainer.io:3000/v1") # Use /v1/ui to check out your credits in web browser
+TEAM_API_KEY = os.getenv("TEAM_API_KEY", "paste your key here or in environment variable")
 
 # ---------------------------------------------------------------------------
 # 1. Verify the proxy is reachable
@@ -73,7 +73,7 @@ print(f"Sending request: \"{QUESTION}\"")
 print("-" * 60)
 
 response = client.chat.completions.create(
-    model="gpt-4o",   # model name is ignored by the proxy — it uses the configured deployment
+    model="gpt-4.1",  
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": QUESTION},
